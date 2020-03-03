@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:gravity="center"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tv_topic_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:text="Sample topic name"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"/>
+
+    <TextView
+        android:id="@+id/tv_topic_starter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#4e4e4e"
+        android:textSize="12sp"
+        android:layout_below="@+id/tv_topic_name"
+        tools:text="Created by: Laban"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"/>
+
+    <TextView
+        android:id="@+id/tv_date_created"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#4e4e4e"
+        android:textSize="12sp"
+        android:layout_below="@+id/tv_topic_name"
+        tools:text="05/02/2019"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="italic"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAlignment="viewEnd"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/tv_topic_starter"
+        android:gravity="end"
+        android:layout_alignParentRight="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@android:color/black"
+        android:layout_below="@+id/tv_date_created"
+        android:layout_marginTop="3dp"/>
+
+</RelativeLayout>

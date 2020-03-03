@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.TopicsActivity">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppTheme.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppTheme.PopupMenu">
+            <TextView
+                android:id = "@+id/title"
+                android:textColor = "@color/bgTitleRight"
+                android:textSize="20sp"
+                android:layout_width = "wrap_content"
+                android:marqueeRepeatLimit="1"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:layout_height = "wrap_content" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+        <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_topics_list"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="match_parent">
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:id="@+id/layout_topics_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/progress_background"
+        android:layout_centerInParent="true"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="20dp"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading..."
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="8dp"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@android:drawable/screen_background_dark_transparent"
+        android:elevation="2dp"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/tv_topics_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="No Consultation Request currently Available"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:textColor="#d90000"
+        android:background="@drawable/error_background"
+        android:paddingVertical="17dp"
+        android:paddingHorizontal="16dp"
+        android:visibility="gone"/>
+
+</RelativeLayout>

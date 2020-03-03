@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="inputSearch" type="id" />
+    <item name="Button5" type="id" />
+    <item name="activity_main21" type="id" />
+    <item name="tv_forum_name" type="id" />
+    <item name="tv_forum_desc" type="id" />
+    <item name="input_username" type="id" />
+    <item name="input_sign_up_email_address" type="id" />
+    <item name="input_sign_up_password" type="id" />
+    <item name="input_phone_number" type="id" />
+    <item name="input_confirm_password" type="id" />
+    <item name="btn_sign_up" type="id" />
+    <item name="drawer_layout" type="id" />
+    <item name="nav_view" type="id" />
+</resources>

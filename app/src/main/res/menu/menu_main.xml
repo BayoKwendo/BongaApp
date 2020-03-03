@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+     <item
+         android:id="@+id/profile"
+         android:icon="@drawable/ic_action_help"
+         android:title="User Profile"
+         app:showAsAction="never" />
+
+     <item android:title="Communicate">
+
+          <menu>
+               <item
+                   android:id="@+id/call"
+                   android:icon="@drawable/ic_phone_black_24dp"
+                   android:title="Call Us" />
+               <item
+                   android:id="@+id/nav_facebook"
+                   android:icon="@drawable/ic_textsms_black_24dp"
+                   android:title="Send Message" />
+               <item
+                   android:id="@+id/nav_twitter"
+                   android:icon="@drawable/ic_mail_outline_black_24dp"
+                   android:title="Email Us" />
+          </menu>
+     </item>
+
+     <item
+         android:id="@+id/about"
+         android:icon="@drawable/ic_action_help"
+         android:title="About Us"
+         app:showAsAction="never" />
+     <item
+        android:id="@+id/logout"
+         android:icon="@drawable/ic_action_help"
+         android:title="Log out"
+         app:showAsAction="never" />
+<!--     <item-->
+<!--        android:id="@+id/logout"-->
+<!--        android:icon="@drawable/logout"-->
+<!--        app:showAsAction = "ifRoom"/>-->
+
+
+</menu>

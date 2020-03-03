@@ -1,0 +1,76 @@
+package com.navigatpeer.deaf;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.Html;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.navigatpeer.R;
+
+
+public class Backtrace extends AppCompatActivity {
+
+//    private RecyclerView mTopicsRv;
+//    private LinearLayout mProgressLayout;
+//    private DatabaseReference mTopicsRef;
+//
+//    private TextView mErrorTv;
+
+    String text2;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_consultatan_request);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        TextView tool = (TextView) toolbar.findViewById(R.id.title);
+        tool.setText("Sure?");
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setElevation(0);
+        }
+
+        text2 = getIntent().getStringExtra("forumKey");
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // Set the Alert Dialog Message
+        builder.setTitle(Html.fromHtml("<font color = '#008080'> Confirm!!</font>"));
+        builder.setMessage("Exit Chat Room? You can still come back to continue with this session");
+        builder.setCancelable(false);
+
+        builder.setNegativeButton(Html.fromHtml("<font color = '#e20719'> Cancel</font>"),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+
+                        Intent topicsIntent = new Intent(Backtrace.this, PrivateActivityDeaf.class);
+                        topicsIntent.putExtra("forumKey", text2);
+                        startActivity(topicsIntent);
+
+
+
+                    }
+                });
+        builder.setPositiveButton(Html.fromHtml("<font color = '#118626'> Yes</font>"),
+                (dialog, which) -> {
+
+
+                    Intent topicsIntent = new Intent(Backtrace.this, DashboardDeaf.class);
+                    startActivity(topicsIntent);
+
+                });
+        AlertDialog alert = builder.create();
+
+        alert.show();
+
+
+    }
+}
