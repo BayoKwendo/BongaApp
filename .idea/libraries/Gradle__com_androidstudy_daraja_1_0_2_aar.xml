@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.androidstudy:daraja:1.0.2@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a2b279b62eb276730456752686a3e504/jetified-daraja-1.0.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a2b279b62eb276730456752686a3e504/jetified-daraja-1.0.2/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ba5f4709036cdafab8b1e2dba44aa4b2/jetified-daraja-1.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ba5f4709036cdafab8b1e2dba44aa4b2/jetified-daraja-1.0.2/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.androidstudy/daraja/1.0.2/a5412cce0fa17258742c1a4803fe95c61e8c9d9d/daraja-1.0.2-javadoc.jar!/" />
