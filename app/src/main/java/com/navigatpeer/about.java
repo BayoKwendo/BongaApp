@@ -328,8 +328,7 @@ public class about extends AppCompatActivity {
             search();
         }
         if (id == android.R.id.home) {
-            onBackPressed();
-            finish();
+            refreshActivity();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -389,12 +388,6 @@ public class about extends AppCompatActivity {
         avi.hide();
     }
 
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(about.this, Dashboard.class));
-
-
-    }
 
     public class MyWebChromeClient extends WebChromeClient {
 
@@ -437,6 +430,17 @@ public class about extends AppCompatActivity {
                 setContentView(mContentView);
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        refreshActivity();
+    }
+
+    public void refreshActivity() {
+        Intent i = new Intent(this, Dashboard.class);
+        i.putExtra("restart", "backtrace");
+        startActivity(i);
     }
 }
 

@@ -8,19 +8,66 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="faile" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ef7e213-d6d2-4558-aa5e-fc5b8c32f1b0" name="Default Changelist" comment="" />
+    <list default="true" id="8ef7e213-d6d2-4558-aa5e-fc5b8c32f1b0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_browser_browser_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_auth_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/DocConfirm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/DocConfirmDeaf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/send.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activityphone.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/content.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doctclarification.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/AdminLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/AdminLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/CheckQuestion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/DiscussionsActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/PrivateActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/PrivateActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/QuestionsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/QuestionsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/QuestionsClientActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/SignupActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/SignupActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/StartConsultation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/TopicsActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/User_Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/User_Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/about.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/about.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/AdminLoginDeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/AdminLoginDeaf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/DashboardDeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/DashboardDeaf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/QuestionsActivityDeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/QuestionsActivityDeaf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/SignupActivityDeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/SignupActivityDeaf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_consultation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_consultation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_consultation_deaf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_consultation_deaf.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login_deaf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login_deaf.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dashboard.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_XL_API_27" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="1ff290010506" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -95,48 +142,14 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>mTopicsRef</find>
-      <find>onBackpress</find>
-      <find>onClick</find>
-      <find>Dashboard</find>
-      <find>PrivateActivityDoctorsDeaf</find>
-      <find>De</find>
-      <find>Message</find>
-      <find>ForumMessagesDeaf</find>
-      <find>LoginActivity</find>
-      <find>Consulations</find>
-      <find>Consula</find>
-      <find>Consulatio</find>
-      <find>ForumMessages</find>
-      <find>Log</find>
-      <find>FAILED!</find>
-      <find>FAILED</find>
-      <find>Admin</find>
-      <find>refreshActivity()</find>
-      <find>DeafConsultation</find>
-      <find>Consultation</find>
-      <find>admin</find>
-      <find>sendCode()</find>
-      <find>UsersD</find>
-      <find>successful</find>
-      <find>uploadImage</find>
-      <find>Users</find>
-      <find>true</find>
-      <find>uploadImage()</find>
-      <find>fire</find>
-      <find>.limitTo</find>
-    </findStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/app</dir>
-    </dirStrings>
-  </component>
   <component name="GenerateSignedApkSettings">
     <option name="EXPORT_PRIVATE_KEY" value="false" />
     <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/../../../APPLICATIONS/factsheet.jks" />
     <option name="KEY_ALIAS" value="key0" />
     <option name="REMEMBER_PASSWORDS" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="144" />
@@ -144,75 +157,16 @@
     <option name="height" value="624" />
   </component>
   <component name="ProjectId" id="1YcETF3HORWAu3XlddxIkckbBGF" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="NavigatPeer" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="NavigatPeer" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="NavigatPeer" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="NavigatPeer" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="NavigatPeer" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="NavigatPeer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIKIKA" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="NavigatPeer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIKIKA" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="NavigatPeer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIKIKA" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="1ff290010506" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-03-02T06:24:06.023Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="02600107CC100684" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-03-07T17:00:16.228Z" />
     <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
     <property name="ExportApk.BuildVariants" value="release" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../APPLICATIONS/factsheet.jks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -228,15 +182,15 @@
       <recent name="com.navigatpeer" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.navigatpeer.Adapters" />
       <recent name="com.navigatpeer.deaf" />
       <recent name="com.navigatpeer" />
+      <recent name="com.navigatpeer.Adapters" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/java/com/navigatpeer" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
-      <recent name="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/navigatpeer" />
       <recent name="$PROJECT_DIR$/app/src/main/res" />
     </key>
   </component>
@@ -448,6 +402,19 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -465,6 +432,11 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/about.java</url>
           <line>76</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/navigatpeer/DocConfirm.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

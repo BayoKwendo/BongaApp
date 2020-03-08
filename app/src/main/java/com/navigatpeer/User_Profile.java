@@ -84,8 +84,6 @@ public class User_Profile extends AppCompatActivity {
             getSupportActionBar().setElevation(0);
         }
 
-
-
         mNameField = (EditText) findViewById(R.id.name);
         mPhoneField = (EditText) findViewById(R.id.phone);
         mNumberField = (EditText) findViewById(R.id.number);
@@ -181,7 +179,7 @@ public class User_Profile extends AppCompatActivity {
         int id = item.getItemId();
         if (id == android.R.id.home)
         {
-            onBackPressed();
+            refreshActivity();
             return true;
         }
         else
@@ -191,8 +189,6 @@ public class User_Profile extends AppCompatActivity {
     }
 
     private void saveUserInformation() {
-//        mProgressDialog.setMessage("Saving... \n Please Wait.. :)");
-//        mProgressDialog.show();
 
         mName = mNameField.getText().toString();
         mPhone = mPhoneField.getText().toString();
@@ -233,99 +229,10 @@ public class User_Profile extends AppCompatActivity {
                     Uri downloadUrl = taskSnapshot.getDownloadUrl();
                     //and you can convert it to string like this:
                     final String sdownload_url = downloadUrl.toString();
-
-
-
-//                Log.d(TAG, "onSuccess:" + sdownload_url);
-//                Toast.makeText(MainActivity.this, "" + sdownload_url, Toast.LENGTH_SHORT).show();
-//
-//
-
-
-                    Map<String, Object> newImage = new HashMap<>();
-                    newImage.put("URL", sdownload_url);
-
-                    mCourierDatabase.updateChildren(newImage);
-
-                    Toast.makeText(User_Profile.this, "Profile Updated Successful!!", Toast.LENGTH_SHORT).show();
-//                    Query query =  FirebaseDatabase.getInstance().getReference().child("Users").limitToLast(1);
-//                    query.addValueEventListener(new ValueEventListener() {
-//                        @Override
-//                        public void onDataChange(DataSnapshot dataSnapshot) {
-//                            for (DataSnapshot childdata : dataSnapshot.getChildren()) {
-//                                childdata.getRef().child("URL").setValue(sdownload_url);
-//                            }
-//
-//                        }
-//
-//                        @Override
-//                        public void onCancelled(DatabaseError databaseError) {
-//                            throw databaseError.toException(); // never ignore errors
-//                        }
-//                    });
-//                    return;
                 }
             });
 
         }
-
-
-//        if(resultUri != null) {
-//
-//
-//            StorageReference filePath = FirebaseStorage.getInstance().getReference().child("profile_images").child(userID);
-//            Bitmap bitmap = null;
-//            try {
-//                bitmap = MediaStore.Images.Media.getBitmap(getApplication().getContentResolver(), resultUri);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//            assert bitmap != null;
-//            bitmap.compress(Bitmap.CompressFormat.JPEG, 20, baos);
-//            byte[] data = baos.toByteArray();
-//            UploadTask uploadTask = filePath.putBytes(data);
-//
-//            uploadTask.addOnFailureListener(new OnFailureListener() {
-//                @Override
-//                public void onFailure(@NonNull Exception e) {
-//                    mProgressDialog.dismiss();
-//                    Toast.makeText(User_Profile.this, "Unable to Upload", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//            });
-//            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                @Override
-//                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//
-//                    Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
-//                    while (
-//                            !urlTask.isSuccessful()
-//                       );
-//
-//                    Toast.makeText(User_Profile.this, "jchch", Toast.LENGTH_SHORT).show();
-//
-//                    Uri downloadUrl = urlTask.getResult();
-//
-//
-//                    final String sdownload_url = String.valueOf(downloadUrl);
-//
-//
-//                    mProgressDialog.dismiss();
-//
-//
-//                    Map<String, Object> newImage = new HashMap<>();
-//                    newImage.put("profileImageUrl", sdownload_url);
-//
-//                    mCourierDatabase.updateChildren(newImage);
-//
-//                }
-//            });
-//        }else{
-//            finish();
-//        }
-
     }
 
 
@@ -337,5 +244,16 @@ public class User_Profile extends AppCompatActivity {
             resultUri = imageUri;
             mProfileImage.setImageURI(resultUri);
         }
+    }
+
+    public void refreshActivity() {
+        Intent i = new Intent(this, Dashboard.class);
+        i.putExtra("restart", "backtrace");
+        startActivity(i);
+    }
+
+    @Override
+    public void onBackPressed() {
+        refreshActivity();
     }
 }

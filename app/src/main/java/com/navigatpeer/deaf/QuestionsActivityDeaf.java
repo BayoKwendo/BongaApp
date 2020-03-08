@@ -159,9 +159,9 @@ public class QuestionsActivityDeaf extends AppCompatActivity {
                 if (!dataSnapshot.exists()) {
                     mProgressLayout.setVisibility(View.GONE);
                     mErrorTv.setVisibility(View.VISIBLE);
+                }else {
+                    loadData();
                 }
-                loadData();
-
             }
 
             @Override

@@ -1,8 +1,6 @@
 package com.navigatpeer;
 
-import android.app.AlarmManager;
 import android.app.AlertDialog;
-import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -103,10 +101,6 @@ public class PrivateActivity extends AppCompatActivity {
         mMessageInput = findViewById(R.id.input_response);
         mSendBtn = findViewById(R.id.btn_send_reply);
         imagevie = findViewById(R.id.upload);
-
-
-
-
         mProgress = new ProgressDialog(PrivateActivity.this);
         mProgress.setMessage("Redirecting...");
         mProgress.setCancelable(false);
@@ -130,12 +124,12 @@ public class PrivateActivity extends AppCompatActivity {
         mMessagesRv.setHasFixedSize(true);
         mAuthListener = firebaseAuth -> {
             if (currentUid != null) {
-                if (currentUid.equals("pHvlmpGCIlYdavQzseg4lnAZuCh2")) {
-//                        Toast.makeText(PrivateActivityDeaf.this, "Your welcome doc", Toast.LENGTH_SHORT).show();
-                } else {
-//                        Toast.makeText(PrivateActivityDeaf.this, "Your welcome to the consultation room", Toast.LENGTH_SHORT).show();
-
-                }
+//                if (currentUid.equals("pHvlmpGCIlYdavQzseg4lnAZuCh2")) {
+////                        Toast.makeText(PrivateActivityDeaf.this, "Your welcome doc", Toast.LENGTH_SHORT).show();
+//                } else {
+////                        Toast.makeText(PrivateActivityDeaf.this, "Your welcome to the consultation room", Toast.LENGTH_SHORT).show();
+//
+//                }
 
             }
         };
@@ -585,7 +579,7 @@ public class PrivateActivity extends AppCompatActivity {
 //        AlarmManager mgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
 //        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
 
-        android.os.Process.killProcess(android.os.Process.myPid());
+       android.os.Process.killProcess(android.os.Process.myPid());
 //        System.exit(0);
 //
         Intent i = new Intent(this, Dashboard.class);
@@ -630,7 +624,7 @@ public class PrivateActivity extends AppCompatActivity {
 //                Toast.makeText(PoliceDashBoard.this, "" + sdownload_url, Toast.LENGTH_SHORT).show();
 //
 //
-                    Query query =mDiscussionsRef.orderByChild("sender").equalTo(currentUid)
+                    Query query = mDiscussionsRef.orderByChild("sender").equalTo(currentUid)
                             .limitToLast(1);
                     query.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -640,6 +634,7 @@ public class PrivateActivity extends AppCompatActivity {
                             }
 
                         }
+
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
                             throw databaseError.toException(); // never ignore errors

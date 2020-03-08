@@ -9,17 +9,24 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.ErrorCodes;
+import com.firebase.ui.auth.IdpResponse;
+import com.firebase.ui.auth.ResultCodes;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -39,6 +46,7 @@ import com.navigatpeer.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -59,6 +67,12 @@ public class SignupActivityDeaf extends AppCompatActivity {
     private final int PICK_IMAGE_REQUEST = 71;
 
     ImageView image;
+
+    String username, email, password ,phone ,date ;
+
+
+
+    private static final int RC_SIGN_IN = 123;
 
 
     Button choosebtn;
@@ -127,12 +141,12 @@ public class SignupActivityDeaf extends AppCompatActivity {
         mCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = mUsernameInput.getText().toString().trim();
-                String email = mEmailInput.getText().toString().trim();
-                String password = mPasswordInput.getText().toString().trim();
+                 username = mUsernameInput.getText().toString().trim();
+                 email = mEmailInput.getText().toString().trim();
+                 password = mPasswordInput.getText().toString().trim();
                 String confPass = mConfPasswordInput.getText().toString().trim();
-                String phone = mPhoneInput.getText().toString().trim();
-                String date = mdate.getText().toString().trim();
+                 phone = mPhoneInput.getText().toString().trim();
+                 date = mdate.getText().toString().trim();
                 String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
                 image = findViewById(R.id.imgView);
 
@@ -185,7 +199,15 @@ public class SignupActivityDeaf extends AppCompatActivity {
                     if (!confPass.equals(password)) {
                         Toast.makeText(SignupActivityDeaf.this, "Passwords do not match.", Toast.LENGTH_LONG).show();
                     } else {
-                        createUser(username, email,date, phone, password);
+                        startActivityForResult(
+                                AuthUI.getInstance()
+                                        .createSignInIntentBuilder()
+                                        .setAvailableProviders(
+                                                Arrays.asList(
+                                                        new AuthUI.IdpConfig.Builder(AuthUI.PHONE_VERIFICATION_PROVIDER).build()
+                                                ))
+                                        .build(),
+                                RC_SIGN_IN);
                     }
                 }
 
@@ -345,10 +367,35 @@ public class SignupActivityDeaf extends AppCompatActivity {
         startActivityForResult(intent, 1);
         image.setVisibility(View.VISIBLE);
     }
-    @Override
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        // RC_SIGN_IN is the request code you passed into startActivityForResult(...) when starting the sign in flow.
+        if (requestCode == RC_SIGN_IN) {
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+            // Successfully signed in
+            if (resultCode == ResultCodes.OK) {
+                createUser(username, email,date, phone, password);
+                Toast.makeText(this, "OTP verification success", Toast.LENGTH_SHORT).show();
+                return;
+            } else {
+                // Sign in failed
+                if (response == null) {
+                    // User pressed back button
+                    Log.e("Login","Login canceled by User");
+                    return;
+                }
+                if (response.getErrorCode() == ErrorCodes.NO_NETWORK) {
+                    Log.e("Login","No Internet Connection");
+                    return;
+                }
+                if (response.getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
+                    Log.e("Login","Unknown Error");
+                    return;
+                }
+            }
+            Log.e("Login","Unknown sign in response");
+        }
         if(requestCode == 1 && resultCode == RESULT_OK
                 && data != null && data.getData() != null ) {
             filePath = data.getData();

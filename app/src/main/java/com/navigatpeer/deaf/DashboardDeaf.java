@@ -5,11 +5,13 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +27,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -62,8 +65,15 @@ public class DashboardDeaf extends AppCompatActivity {
     private RecyclerView mForumsRv;
     ImageView image;
     private ProgressDialog mProgress;
+    private Parcelable recyclerViewState;
+
+    private final String KEY_RECYCLER_STATE = "recycler_state";
+    private static Bundle mBundleRecyclerViewState;
 
     private LinearLayout mProgressLayout;
+    RecyclerView.AdapterDataObserver mDataObserver;
+    SwipeRefreshLayout swipeRefreshLayout;
+    private Parcelable mListState ;
     FirebaseRecyclerAdapter<Forums, ForumsViewHolder> adapter;
 
 
@@ -76,6 +86,8 @@ public class DashboardDeaf extends AppCompatActivity {
         image = findViewById(R.id.image_id);
         tool.setText("BongaApp");
 
+
+
         profile();
 
         setSupportActionBar(toolbar);
@@ -85,26 +97,23 @@ public class DashboardDeaf extends AppCompatActivity {
         }
         mAuth = FirebaseAuth.getInstance();
         userID = mAuth.getCurrentUser().getUid();
-
-
-
         mForumsRef = FirebaseDatabase.getInstance().getReference().child("DiscussionForums");
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
-//                if (mAuth.getCurrentUser() == null){
-//                    startActivity(new Intent(DashboardDeaf.this, LoginActivityDeaf.class));
-//                    finish();
-//                    Toast.makeText(DashboardDeaf.this, "You Must Login first", Toast.LENGTH_SHORT).show();
-//                }
+                //                if (mAuth.getCurrentUser() == null){
+                //                    startActivity(new Intent(DashboardDeaf.this, LoginActivityDeaf.class));
+                //                    finish();
+                //                    Toast.makeText(DashboardDeaf.this, "You Must Login first", Toast.LENGTH_SHORT).show();
+                //                }
             }
         };
 
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashboardDeaf.this, User_Profile.class));
+                startActivity(new Intent(DashboardDeaf.this, com.navigatpeer.deaf.User_Profile.class));
 
             }
         });
@@ -116,12 +125,23 @@ public class DashboardDeaf extends AppCompatActivity {
         mProgress.setMessage("Redirecting \n Please wait...");
         mProgress.setCancelable(false);
 
-//        if (getIntent().getBooleanExtra("EXIT", false))
-//        {
-//            Intent i = new Intent(DashboardDeaf.this, CheckQuestion.class);
-//            startActivity(i);
-//            finish();
-//        }
+        swipeRefreshLayout = findViewById(R.id.swipe);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshItems();
+            }
+        });
+
+
+        //        if (getIntent().getBooleanExtra("EXIT", false))
+        //        {
+        //            Intent i = new Intent(DashboardDeaf.this, CheckQuestion.class);
+        //            startActivity(i);
+        //            finish();
+        //        }
+        loadData();
 
 
         if (!isNetworkAvailable()) {
@@ -149,7 +169,10 @@ public class DashboardDeaf extends AppCompatActivity {
             AlertDialog alert = builder.create();
             alert.show();
         }
+
+
     }
+
 
 
     private boolean isNetworkAvailable() {
@@ -162,13 +185,13 @@ public class DashboardDeaf extends AppCompatActivity {
         return activeNetworkInfo != null;
     }
 
-    private class ForumsViewHolder extends RecyclerView.ViewHolder {
+    private static class ForumsViewHolder extends RecyclerView.ViewHolder {
 
         private TextView mForumNameTv, tvIcon;
 
         private View mView;
 
-        public ForumsViewHolder(View itemView) {
+        ForumsViewHolder(View itemView) {
             super(itemView);
 
             mView = itemView;
@@ -181,17 +204,31 @@ public class DashboardDeaf extends AppCompatActivity {
         }
     }
 
+    void refreshItems() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                swipeRefreshLayout.setRefreshing(false);
+                loadData();
+            }
+        }, 1000);
+    }
+
+
+
+
+
     @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
+    protected void onPause()
+    {
+        super.onPause();
 
-        profile();
+        mBundleRecyclerViewState = new Bundle();
 
+        mListState = mForumsRv.getLayoutManager().onSaveInstanceState();
 
-
-        loadData();
-
+        mBundleRecyclerViewState.putParcelable(KEY_RECYCLER_STATE, mListState);
     }
 
     @Override
@@ -199,31 +236,16 @@ public class DashboardDeaf extends AppCompatActivity {
         super.onResume();
 
         profile();
+        if (mBundleRecyclerViewState != null) {
 
-//
-//
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        // Set the Alert Dialog Message
-//        builder.setTitle(Html.fromHtml("<font color = '#008080'> Confirm!!</font>"));
-//        builder.setMessage("Exit Chat Room? You can still come back to continue with this session");
-//        builder.setCancelable(false);
-//
-//        builder.setNegativeButton(Html.fromHtml("<font color = '#e20719'> Cancel</font>"),
-//                new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int id) {
-//                        dialog.dismiss();
-//
-//                    }
-//                });
-//        builder.setPositiveButton(Html.fromHtml("<font color = '#118626'> Yes</font>"),
-//                (dialog, which) -> {
-//                    recreate();
-//
-//                });
-//        AlertDialog alert = builder.create();
-//
-//        alert.show();
-//
+            mListState = mBundleRecyclerViewState.getParcelable(KEY_RECYCLER_STATE);
+            mForumsRv.getLayoutManager().onRestoreInstanceState(mListState);
+        }
+//            else{
+//                Toast.makeText(this, "NULLL", Toast.LENGTH_SHORT).show();
+//            }
+
+
 
 
 
@@ -251,7 +273,7 @@ public class DashboardDeaf extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull ForumsViewHolder holder, final int position, @NonNull Forums model) {
 
                 holder.mForumNameTv.setText(model.getForumName());
-//                holder.mDescTv.setText(model.getDescription());
+                //                holder.mDescTv.setText(model.getDescription());
 
                 holder.tvIcon.setText(model.getForumName().substring(0, 1));
 
@@ -267,9 +289,6 @@ public class DashboardDeaf extends AppCompatActivity {
                             public void onDataChange(DataSnapshot dataSnapshot) {
 
                                 if (!dataSnapshot.exists()) {
-
-
-
 
                                     FirebaseDatabase.getInstance().getReference().child("DiscussionForums")
                                             .child(getRef(position).getKey()).addValueEventListener(new ValueEventListener() {
@@ -408,7 +427,7 @@ public class DashboardDeaf extends AppCompatActivity {
 
                 adapter.startListening();
 
-                return  new ForumsViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_forums_row, parent, false));
+                return new ForumsViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_forums_row, parent, false));
             }
         };
 
@@ -431,23 +450,23 @@ public class DashboardDeaf extends AppCompatActivity {
         // do some stuff here
     }
 
-//    @Override
-//    public void onStop() {
-//        super.onStop();
-//         FirebaseAuth.getInstance().signOut();zz
-//        loadData();
-//
-//    }
+    //    @Override
+    //    public void onStop() {
+    //        super.onStop();
+    //         FirebaseAuth.getInstance().signOut();zz
+    //        loadData();
+    //
+    //    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-//        // Lofcate MenuItem with ShareActionProvider
-//        MenuItem item = menu.findItem(R.id.logout);
-//
-//
-//        // Return true to display menu
+        //        // Lofcate MenuItem with ShareActionProvider
+        //        MenuItem item = menu.findItem(R.id.logout);
+        //
+        //
+        //        // Return true to display menu
         return true;
     }
     @Override
@@ -509,26 +528,26 @@ public class DashboardDeaf extends AppCompatActivity {
         }
 
 
-//
-//        new AlertDialog.Builder(this)
-//                .setTitle("Really Exit?")
-//                .setMessage("Are you sure you want to exit?")
-//                .setNegativeButton(android.R.string.no, null)
-//                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-//
-//                    public void onClick(DialogInterface arg0, int arg1) {
-//                        DashboardDeaf.super.onBackPressed();
-//
-//                        finishAffinity();
-//                    }
-//                }).create().show();
+        //
+        //        new AlertDialog.Builder(this)
+        //                .setTitle("Really Exit?")
+        //                .setMessage("Are you sure you want to exit?")
+        //                .setNegativeButton(android.R.string.no, null)
+        //                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+        //
+        //                    public void onClick(DialogInterface arg0, int arg1) {
+        //                        DashboardDeaf.super.onBackPressed();
+        //
+        //                        finishAffinity();
+        //                    }
+        //                }).create().show();
 
     }
 
 
     void profile(){
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("UsersDeaf");
         Query dbRefFirstTimeCheck = databaseReference.orderByChild("UserId").equalTo(userID);
         dbRefFirstTimeCheck.addValueEventListener(new ValueEventListener() {
             @Override
@@ -553,6 +572,9 @@ public class DashboardDeaf extends AppCompatActivity {
             }
         });
     }
+
+
+
 
 
 }

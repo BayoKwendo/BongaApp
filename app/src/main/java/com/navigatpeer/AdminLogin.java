@@ -113,7 +113,7 @@ public class AdminLogin extends AppCompatActivity {
         String currentUid = mAuth.getCurrentUser().getUid();
             if (currentUid.equals("lYZFt7MuzzQJeqY60CDaW1jSZ0C3")){
                 Toast.makeText(this, "Welcome Sir/Madam", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(AdminLogin.this,  QuestionsActivity.class));
+                startActivity(new Intent(AdminLogin.this,  DocConfirm.class));
                 finish();
             }
             else {

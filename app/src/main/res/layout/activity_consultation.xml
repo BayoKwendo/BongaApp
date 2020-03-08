@@ -74,13 +74,13 @@
             android:hint="Enter message"
             android:inputType="text|textCapSentences|textAutoComplete"
             android:maxLines="6" />
-
         <ImageView
             android:layout_width="40dp"
             android:id="@+id/uploads"
-            android:src="@drawable/upload"
+            android:src="@drawable/icon"
+            android:padding="10dp"
             android:layout_gravity="center"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_height="48dp"/>
 
         <Button

@@ -66,6 +66,11 @@
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/swipe"
+            >
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,7 +85,9 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_forum_list"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+                    android:layout_height="match_parent">
+
+                </androidx.recyclerview.widget.RecyclerView>
 
             </RelativeLayout>
 
@@ -110,6 +117,7 @@
             </LinearLayout>
 
         </RelativeLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <View

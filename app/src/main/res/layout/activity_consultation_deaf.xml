@@ -81,19 +81,8 @@
             android:layout_gravity="center"
             android:layout_height="48dp"/>
 
-        <Button
-            android:id="@+id/btn_send_reply"
-            android:layout_width="60dp"
-            android:layout_height="48dp"
-            android:layout_gravity="bottom"
-            android:layout_marginRight="8dp"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:gravity="center"
-            android:text="SEND"
-            android:textSize="14dp" />
-
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/layout_discussions_progress"

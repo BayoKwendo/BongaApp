@@ -15,15 +15,9 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".QuestionsActivity"></activity>
-        <activity android:name=".QuestionsClientActivity"></activity>
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".SignupActivity" />
-        <activity android:name=".DiscussionsActivity" />
         <activity android:name=".PrivateActivity" />
-        <activity android:name=".StartConsultation" />
-        <activity android:name=".TopicsActivity" />
-        <activity android:name=".CheckQuestion" />
-        <activity android:name=".deaf.CheckQuestion" />
         <activity android:name=".deaf.LoginActivityDeaf" >
 
 
@@ -31,12 +25,8 @@
 
         <activity android:name=".deaf.PrivateActivityDeaf" />
         <activity android:name=".deaf.QuestionsActivityDeaf" />
-        <activity android:name=".deaf.QuestionsClientActivity" />
         <activity android:name=".deaf.ResetPasswordActivity" />
         <activity android:name=".deaf.SignupActivityDeaf" />
-        <activity android:name=".deaf.TopicsActivity" />
-        <activity android:name=".deaf.StartDiscussionActivity" />
-        <activity android:name=".deaf.StartConsultation" />
         <activity android:name=".Dashboard"></activity>
         <activity android:name=".User_Profile" />
         <activity android:name=".SplashActivity">
@@ -59,11 +49,14 @@
         <activity android:name=".about" />
         <activity android:name=".deaf.User_Profile" />
         <activity android:name=".deaf.PrivateActivityDoctorsDeaf" />
-        <activity android:name=".deaf.Adapters.AdminLogin" />
         <activity android:name=".deaf.AdminLoginDeaf" />
         <activity android:name=".deaf.Backtrace" />
         <activity android:name=".deaf.DashboardDeaf" />
         <activity android:name=".deaf.about" />
+        <activity android:name=".deaf.MainActivity" />
+        <activity android:name=".DocConfirm" >
+        </activity>
+        <activity android:name=".deaf.DocConfirmDeaf" />
     </application>
 
 </manifest>

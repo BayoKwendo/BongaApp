@@ -9,17 +9,24 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.ErrorCodes;
+import com.firebase.ui.auth.IdpResponse;
+import com.firebase.ui.auth.ResultCodes;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -40,6 +47,7 @@ import com.navigatpeer.deaf.TextViewDatePicker;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -59,8 +67,15 @@ public class SignupActivity extends AppCompatActivity {
     private StorageReference refstorage;
     private final int PICK_IMAGE_REQUEST = 71;
 
+    String username, email, password, confPass ,phone ,date ;
+
     ImageView image;
 
+       LinearLayout mlinear1, mlinear2;
+
+
+
+    private static final int RC_SIGN_IN = 123;
 
     Button choosebtn;
 
@@ -76,6 +91,7 @@ public class SignupActivity extends AppCompatActivity {
         mEmailInput = findViewById(R.id.input_sign_up_email_address);
         mPasswordInput = findViewById(R.id.input_sign_up_password);
         mPhoneInput = findViewById(R.id.input_phone_number);
+        mlinear1 = findViewById(R.id.linear1);
         mdate = findViewById(R.id.indate);
 
         image = findViewById(R.id.imgView);
@@ -128,13 +144,13 @@ public class SignupActivity extends AppCompatActivity {
         mCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = mUsernameInput.getText().toString().trim();
-                String email = mEmailInput.getText().toString().trim();
-                String password = mPasswordInput.getText().toString().trim();
-                String confPass = mConfPasswordInput.getText().toString().trim();
-                String phone = mPhoneInput.getText().toString().trim();
-                String date = mdate.getText().toString().trim();
-                String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+                 username = mUsernameInput.getText().toString().trim();
+                 email = mEmailInput.getText().toString().trim();
+                 password = mPasswordInput.getText().toString().trim();
+                 confPass = mConfPasswordInput.getText().toString().trim();
+                 phone = mPhoneInput.getText().toString().trim();
+                 date = mdate.getText().toString().trim();
+                 String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
                 image = findViewById(R.id.imgView);
 
                 if (TextUtils.isEmpty(username)) {
@@ -186,12 +202,63 @@ public class SignupActivity extends AppCompatActivity {
                     if (!confPass.equals(password)) {
                         Toast.makeText(SignupActivity.this, "Passwords do not match.", Toast.LENGTH_LONG).show();
                     } else {
-                        createUser(username, email,date, phone, password);
+
+                        startActivityForResult(
+                                AuthUI.getInstance()
+                                        .createSignInIntentBuilder()
+                                        .setAvailableProviders(
+                                                Arrays.asList(
+                                                        new AuthUI.IdpConfig.Builder(AuthUI.PHONE_VERIFICATION_PROVIDER).build()
+                                                ))
+                                        .build(),
+                                RC_SIGN_IN);
+
                     }
                 }
 
             }
         });
+    }
+
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // RC_SIGN_IN is the request code you passed into startActivityForResult(...) when starting the sign in flow.
+        if (requestCode == RC_SIGN_IN) {
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+            // Successfully signed in
+            if (resultCode == ResultCodes.OK) {
+                createUser(username, email,date, phone, password);
+                Toast.makeText(this, "OTP verification success", Toast.LENGTH_SHORT).show();
+                return;
+            } else {
+                // Sign in failed
+                if (response == null) {
+                    // User pressed back button
+                    Log.e("Login","Login canceled by User");
+                    return;
+                }
+                if (response.getErrorCode() == ErrorCodes.NO_NETWORK) {
+                    Log.e("Login","No Internet Connection");
+                    return;
+                }
+                if (response.getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
+                    Log.e("Login","Unknown Error");
+                    return;
+                }
+            }
+            Log.e("Login","Unknown sign in response");
+        }
+        if(requestCode == 1 && resultCode == RESULT_OK
+                && data != null && data.getData() != null ) {
+            filePath = data.getData();
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                image.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
@@ -215,7 +282,6 @@ public class SignupActivity extends AppCompatActivity {
 
                                 String fire = mAuth.getCurrentUser().getUid();
 
-                                Toast.makeText(SignupActivity.this, "" + fire, Toast.LENGTH_SHORT).show();
 
 
                                 Map userMap = new HashMap();
@@ -305,10 +371,8 @@ public class SignupActivity extends AppCompatActivity {
 //                Log.d(TAG, "onSuccess:" + sdownload_url);
 //                Toast.makeText(MainActivity.this, "" + sdownload_url, Toast.LENGTH_SHORT).show();
 //
-
-
+//
                     String fire = mAuth.getCurrentUser().getUid();
-
                     Query query =  FirebaseDatabase.getInstance().getReference().child("Users").orderByChild("UserId").equalTo(fire);
                     query.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -348,21 +412,6 @@ public class SignupActivity extends AppCompatActivity {
         startActivityForResult(intent, 1);
         image.setVisibility(View.VISIBLE);
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == 1 && resultCode == RESULT_OK
-                && data != null && data.getData() != null ) {
-            filePath = data.getData();
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                image.setImageBitmap(bitmap);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
 
     void selectCheck() {
@@ -388,19 +437,6 @@ public class SignupActivity extends AppCompatActivity {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //package com.navigatpeer;
@@ -632,10 +668,12 @@ public class SignupActivity extends AppCompatActivity {
 //
 //               String mverifyInput = mVerifyInput.getText().toString().trim();
 //                if (TextUtils.isEmpty(mverifyInput)) {
+//                    mVerifyInput.setFocusable(true);
 //                    mVerifyInput.setError("This field is required");
 //                    return;
-//                }else
-//                verifyCode();
+//                }else {
+//                    verifyCode();
+//                }
 //            }
 //        });
 //

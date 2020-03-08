@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.navigatpeer.DocConfirm;
 import com.navigatpeer.R;
 
 public class AdminLoginDeaf extends AppCompatActivity {
@@ -111,9 +112,9 @@ public class AdminLoginDeaf extends AppCompatActivity {
     void admin(){
         mAuth = FirebaseAuth.getInstance();
         String currentUid = mAuth.getCurrentUser().getUid();
-        if (currentUid.equals("lYZFt7MuzzQJeqY60CDaW1jSZ0C3")){
+        if (currentUid.equals("BnUrp4S1krYDeKgNc3CzQKBnM5l2")){
             Toast.makeText(this, "Welcome Sir/Madam", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(AdminLoginDeaf.this,  QuestionsActivityDeaf.class));
+            startActivity(new Intent(AdminLoginDeaf.this,  DocConfirmDeaf.class));
             finish();
         }
         else {

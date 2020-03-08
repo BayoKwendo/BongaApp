@@ -164,8 +164,10 @@ public class QuestionsActivity extends AppCompatActivity {
                 if (!dataSnapshot.exists()) {
                     mProgressLayout.setVisibility(View.GONE);
                     mErrorTv.setVisibility(View.VISIBLE);
-                }else
-                loadData();
+                }else {
+                    loadData();
+                    mErrorTv.setVisibility(View.GONE);
+                }
 
             }
 
@@ -239,7 +241,7 @@ public class QuestionsActivity extends AppCompatActivity {
                                             }
                                             }
                                             Map<String, Object> userInfo = new HashMap<>();
-                                            userInfo.put("ChatStatus", false);
+                                            userInfo.put("ChatStatus", true);
                                             deleteChatRef.updateChildren(userInfo);
 
 
@@ -302,6 +304,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
                     final String Key = pos.getKey();
 
+
                     @Override
                     public boolean onLongClick(View v) {
 
@@ -333,10 +336,24 @@ public class QuestionsActivity extends AppCompatActivity {
                                         dbRefFirstTimeCheck.addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(DataSnapshot dataSnapshot) {
-                                                if (dataSnapshot.exists()) {
+                                                if(dataSnapshot.exists() && dataSnapshot.getChildrenCount()>0) {
+                                                    Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
+                                                    if (map.get("ForumKey") != null) {
+                                                        mName = map.get("ForumKey").toString();
 
-                                                    mTopicsRef.child(Key).removeValue();
-                                                  }
+
+
+                                                    }
+                                                    if (map.get("starter") != null) {
+                                                        userID = map.get("starter").toString();
+                                                    }
+                                                }
+                                                Map<String, Object> userInfo = new HashMap<>();
+                                                userInfo.put("ChatStatus", false);
+                                                deleteChatRef.updateChildren(userInfo);
+                                                recreate();
+
+
 
                                             }
 
@@ -416,7 +433,8 @@ public class QuestionsActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,
                                         int id) {
-                        finishAffinity();
+                        startActivity(new Intent(QuestionsActivity.this, LoginActivity.class));
+
                     }
                 });
 
