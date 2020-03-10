@@ -112,7 +112,7 @@ public class AdminLoginDeaf extends AppCompatActivity {
     void admin(){
         mAuth = FirebaseAuth.getInstance();
         String currentUid = mAuth.getCurrentUser().getUid();
-        if (currentUid.equals("BnUrp4S1krYDeKgNc3CzQKBnM5l2")){
+        if (currentUid.equals("0tai9MHr8rSdqUqJ3RSAK6YfCQr2")){
             Toast.makeText(this, "Welcome Sir/Madam", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(AdminLoginDeaf.this,  DocConfirmDeaf.class));
             finish();

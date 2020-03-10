@@ -161,6 +161,8 @@ public class QuestionsActivityDeaf extends AppCompatActivity {
                     mErrorTv.setVisibility(View.VISIBLE);
                 }else {
                     loadData();
+                    mErrorTv.setVisibility(View.INVISIBLE);
+
                 }
             }
 
@@ -178,7 +180,7 @@ public class QuestionsActivityDeaf extends AppCompatActivity {
 
         mProgressLayout.setVisibility(View.VISIBLE);
 
-        Query query = mTopicsRef.limitToLast(5000000);
+        Query query = mTopicsRef.orderByChild("ChatStatus").equalTo(true);
 
         FirebaseRecyclerOptions<Topics> options =
                 new FirebaseRecyclerOptions.Builder<Topics>()
@@ -225,52 +227,17 @@ public class QuestionsActivityDeaf extends AppCompatActivity {
                                     Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
                                     if (map.get("ForumKey") != null) {
                                         mName = map.get("ForumKey").toString();
-
-
-
                                     }
                                     if (map.get("starter") != null) {
                                         userID = map.get("starter").toString();
                                     }
                                 }
                                 Map<String, Object> userInfo = new HashMap<>();
-                                userInfo.put("ChatStatus", false);
                                 deleteChatRef.updateChildren(userInfo);
-
-
                                 Intent topicsIntent = new Intent(QuestionsActivityDeaf.this, PrivateActivityDoctorsDeaf.class);
                                 topicsIntent.putExtra("forumKey", mName);
                                 topicsIntent.putExtra("starter", userID);
                                 startActivity(topicsIntent);
-
-//                                        if (dataSnapshot.exists()){
-//
-//                                    Toast.makeText(QuestionsActivityDeaf.this, "Good", Toast.LENGTH_SHORT).show();
-//                                }
-//                                else
-//                                    Toast.makeText(QuestionsActivityDeaf.this, "Baad", Toast.LENGTH_SHORT).show();
-//                                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-////                                        if (Objects.requireNonNull(snapshot.getRef().getKey()).equals(getRef(position))) {
-//////                                            deleteChatRef.child(getRef(position).removeValue());
-////
-////
-////                                          }
-//
-//
-//
-//
-//                                        String key = snapshot.child("ForumKey").getValue().toString();
-//
-//                                        Toast.makeText(QuestionsActivityDeaf.this, "Key is: " + key, Toast.LENGTH_SHORT).show();
-//
-//
-//                                    }
-
-
-
-
-
-
                             }
 
                             @Override
@@ -280,12 +247,6 @@ public class QuestionsActivityDeaf extends AppCompatActivity {
                             }
                         });
                     }
-
-
-
-//
-
-
 
                 });
 
@@ -323,15 +284,13 @@ public class QuestionsActivityDeaf extends AppCompatActivity {
                                         final DatabaseReference deleteChatRef = mTopicsRef.child(pkey);
 
 
-                                        Query dbRefFirstTimeCheck = mTopicsRef.orderByChild("ChatStatus").equalTo(false);
+                                        Query dbRefFirstTimeCheck = mTopicsRef.orderByChild("ChatStatus").equalTo(true);
 
                                         dbRefFirstTimeCheck.addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(DataSnapshot dataSnapshot) {
-                                                if (dataSnapshot.exists()) {
+                                                deleteChatRef.removeValue();
 
-                                                    mTopicsRef.child(Key).removeValue();
-                                                }
 
                                             }
 

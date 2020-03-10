@@ -185,7 +185,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
         mProgressLayout.setVisibility(View.VISIBLE);
 
-        Query query = mTopicsRef.limitToLast(5000000);
+        Query query = mTopicsRef.orderByChild("ChatStatus").equalTo(true);
 
         FirebaseRecyclerOptions<Topics> options =
                 new FirebaseRecyclerOptions.Builder<Topics>()
@@ -241,7 +241,6 @@ public class QuestionsActivity extends AppCompatActivity {
                                             }
                                             }
                                             Map<String, Object> userInfo = new HashMap<>();
-                                            userInfo.put("ChatStatus", true);
                                             deleteChatRef.updateChildren(userInfo);
 
 
@@ -249,33 +248,6 @@ public class QuestionsActivity extends AppCompatActivity {
                                                 topicsIntent.putExtra("forumKey", mName);
                                                 topicsIntent.putExtra("starter", userID);
                                                 startActivity(topicsIntent);
-
-//                                        if (dataSnapshot.exists()){
-//
-//                                    Toast.makeText(QuestionsActivityDeaf.this, "Good", Toast.LENGTH_SHORT).show();
-//                                }
-//                                else
-//                                    Toast.makeText(QuestionsActivityDeaf.this, "Baad", Toast.LENGTH_SHORT).show();
-//                                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-////                                        if (Objects.requireNonNull(snapshot.getRef().getKey()).equals(getRef(position))) {
-//////                                            deleteChatRef.child(getRef(position).removeValue());
-////
-////
-////                                          }
-//
-//
-//
-//
-//                                        String key = snapshot.child("ForumKey").getValue().toString();
-//
-//                                        Toast.makeText(QuestionsActivityDeaf.this, "Key is: " + key, Toast.LENGTH_SHORT).show();
-//
-//
-//                                    }
-
-
-
-
 
 
                             }
@@ -336,22 +308,9 @@ public class QuestionsActivity extends AppCompatActivity {
                                         dbRefFirstTimeCheck.addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(DataSnapshot dataSnapshot) {
-                                                if(dataSnapshot.exists() && dataSnapshot.getChildrenCount()>0) {
-                                                    Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
-                                                    if (map.get("ForumKey") != null) {
-                                                        mName = map.get("ForumKey").toString();
 
+                                                deleteChatRef.removeValue();
 
-
-                                                    }
-                                                    if (map.get("starter") != null) {
-                                                        userID = map.get("starter").toString();
-                                                    }
-                                                }
-                                                Map<String, Object> userInfo = new HashMap<>();
-                                                userInfo.put("ChatStatus", false);
-                                                deleteChatRef.updateChildren(userInfo);
-                                                recreate();
 
 
 

@@ -592,7 +592,7 @@ public class PrivateActivityDoctorsDeaf extends AppCompatActivity {
         android.os.Process.killProcess(android.os.Process.myPid());
 //        System.exit(0);
 //
-        Intent i = new Intent(this, DashboardDeaf.class);
+        Intent i = new Intent(this, QuestionsActivityDeaf.class);
         startActivity(i);
 //finish();
 

@@ -581,7 +581,7 @@ public class PrivateActivityDoctors extends AppCompatActivity {
         android.os.Process.killProcess(android.os.Process.myPid());
 //        System.exit(0);
 //
-        Intent i = new Intent(this, Dashboard.class);
+        Intent i = new Intent(this, QuestionsActivity.class);
         startActivity(i);
 //finish();
 

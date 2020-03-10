@@ -13,22 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ef7e213-d6d2-4558-aa5e-fc5b8c32f1b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_browser_browser_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_auth_2_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/DocConfirm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/DocConfirmDeaf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/send.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activityphone.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/content.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doctclarification.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
@@ -38,28 +26,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/AdminLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/AdminLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/CheckQuestion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/app-release.aab" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.aab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/DiscussionsActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/PrivateActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/PrivateActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/PrivateActivityDoctors.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/PrivateActivityDoctors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/QuestionsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/QuestionsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/QuestionsClientActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/SignupActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/SignupActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/StartConsultation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/TopicsActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/User_Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/User_Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/about.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/about.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/AdminLoginDeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/AdminLoginDeaf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/DashboardDeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/DashboardDeaf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/PrivateActivityDeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/PrivateActivityDeaf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/PrivateActivityDoctorsDeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/PrivateActivityDoctorsDeaf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/QuestionsActivityDeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/QuestionsActivityDeaf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/SignupActivityDeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/SignupActivityDeaf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_consultation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_consultation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_consultation_deaf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_consultation_deaf.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login_deaf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login_deaf.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dashboard.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +41,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="1ff290010506" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="02600107CC100684" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -159,8 +133,9 @@
   <component name="ProjectId" id="1YcETF3HORWAu3XlddxIkckbBGF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="02600107CC100684" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-03-07T17:00:16.228Z" />
+    <property name="BundleExportedModule" value="app" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="1ff290010506" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-03-10T22:49:47.787Z" />
     <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
     <property name="ExportApk.BuildVariants" value="release" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -437,6 +412,11 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/navigatpeer/DocConfirm.java</url>
           <line>138</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/navigatpeer/deaf/QuestionsActivityDeaf.java</url>
+          <line>271</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

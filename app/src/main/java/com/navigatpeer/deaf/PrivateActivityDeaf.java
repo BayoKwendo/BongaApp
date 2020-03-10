@@ -87,7 +87,7 @@ public class PrivateActivityDeaf extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consultation_deaf);
+        setContentView(R.layout.activity_consultation);
         Toolbar toolbar = findViewById(R.id.toolbar);
         tool = toolbar.findViewById(R.id.title);
         setSupportActionBar(toolbar);
