@@ -53,13 +53,10 @@ public class LoginActivity extends AppCompatActivity {
 
                     mAuth = FirebaseAuth.getInstance();
 
-                    mAuthListener = new FirebaseAuth.AuthStateListener() {
-                        @Override
-                        public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                            if (mAuth.getCurrentUser() != null) {
+                    mAuthListener = firebaseAuth -> {
+                        if (mAuth.getCurrentUser() != null) {
 //                    startActivity(new Intent(LoginActivityDeaf.this, DashboardDeaf.class));
 //                    finish();
-                }
             }
         };
 
