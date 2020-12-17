@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "473148188980",
+    "firebase_url": "https://bongaapp-83452.firebaseio.com",
+    "project_id": "bongaapp-83452",
+    "storage_bucket": "bongaapp-83452.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473148188980:android:339f68fa07cce53ddb5d61",
+        "android_client_info": {
+          "package_name": "com.navigatpeer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "473148188980-vf8rhhllbhnucdujam7bn708ochv2vmm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.navigatpeer",
+            "certificate_hash": "a1f7e47255bdc4cd26d39459fbc4136606ff8bb2"
+          }
+        },
+        {
+          "client_id": "473148188980-s1e33ok2jio1ql0ilojjd4h93ppna796.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhlnm6ZMggnXpyqUpQ0EnGmfi4mNEl3cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473148188980-s1e33ok2jio1ql0ilojjd4h93ppna796.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

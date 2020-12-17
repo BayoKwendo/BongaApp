@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/NavigatPeer.iml" filepath="$PROJECT_DIR$/NavigatPeer.iml" group="NavigatPeer" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="NavigatPeer/app" />
-    </modules>
-  </component>
-</project>
